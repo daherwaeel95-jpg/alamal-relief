@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مؤسسة الأمل للإغاثة والتنمية | Al Amal Relief Foundation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Cairo & Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+        }
+        .pulse-glow {
+            animation: pulseGlow 2s infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.8); }
+        }
+        .telegram-glow {
+            animation: tgGlow 2s infinite;
+        }
+        @keyframes tgGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(14, 165, 233, 0.5); }
+            50% { box-shadow: 0 0 25px rgba(14, 165, 233, 0.9); }
+        }
+        .whatsapp-glow {
+            animation: waGlow 2s infinite;
+        }
+        @keyframes waGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(34, 197, 94, 0.5); }
+            50% { box-shadow: 0 0 25px rgba(34, 197, 94, 0.9); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-white pb-20">
+
+    <!-- Top Announcement & Quick Direct Contacts Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-emerald-900 to-slate-900 text-white py-2.5 px-4 text-xs font-semibold shadow-inner border-b border-emerald-800/40">
+        <div class="max-w-7xl mx-auto flex justify-between items-center flex-wrap gap-2">
+            <div class="flex items-center gap-3 flex-wrap">
+                <span class="bg-emerald-500 text-slate-950 px-2.5 py-0.5 rounded-full text-[11px] font-black">حسابات التواصل المباشرة</span>
+                <a href="https://t.me/rarnational" target="_blank" class="dynamic-tg-link hover:text-sky-300 transition-colors flex items-center gap-1.5">
+                    <i class="fa-brands fa-telegram text-sky-400"></i>
+                    <span>تيليجرام: <strong class="dynamic-tg-handle">@rarnational</strong></span>
+                </a>
+                <span class="text-slate-600 hidden sm:inline">|</span>
+                <a href="https://wa.me/963967500" target="_blank" class="dynamic-wa-link hover:text-emerald-300 transition-colors flex items-center gap-1.5">
+                    <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                    <span>واتساب: <strong class="dynamic-wa-handle">00963967500</strong></span>
+                </a>
+            </div>
+
+            <button onclick="openSettingsModal()" class="text-amber-300 hover:text-amber-200 text-[11px] font-bold underline flex items-center gap-1">
+                <i class="fa-solid fa-gear"></i>
+                <span>تعديل الحسابات</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white text-2xl shadow-md group-hover:scale-105 transition-transform duration-300">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <div>
+                    <span class="block text-xl font-bold text-slate-900 leading-tight">مؤسسة الأمل</span>
+                    <span class="block text-xs font-semibold text-emerald-600 tracking-wider">للإغاثة والتنمية الإنسانية</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-7 font-semibold text-slate-600 text-sm">
+                <a href="#home" class="text-emerald-600 transition-colors">الرئيسية</a>
+                <a href="#about" class="hover:text-emerald-600 transition-colors">من نحن</a>
+                <a href="#projects" class="hover:text-emerald-600 transition-colors">مشاريعنا</a>
+                <a href="#zakat" class="hover:text-emerald-600 transition-colors">حاسبة الزكاة</a>
+                <a href="#gallery" class="hover:text-emerald-600 transition-colors">التوثيق الميداني</a>
+                <a href="#contact" class="hover:text-emerald-600 transition-colors">تواصل معنا</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-2.5">
+                <!-- Telegram Direct Button -->
+                <a href="https://t.me/rarnational" target="_blank" class="dynamic-tg-link hidden lg:inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white px-3.5 py-2 rounded-xl font-bold text-xs transition-all duration-300 shadow-sm">
+                    <i class="fa-brands fa-telegram text-base"></i>
+                    <span class="dynamic-tg-handle">@rarnational</span>
+                </a>
+
+                <!-- WhatsApp Direct Button -->
+                <a href="https://wa.me/963967500" target="_blank" class="dynamic-wa-link hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-2 rounded-xl font-bold text-xs transition-all duration-300 shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>واتساب</span>
+                </a>
+
+                <!-- Donate Button -->
+                <button onclick="openDonateModal()" class="bg-gradient-to-r from-amber-500 to-emerald-600 hover:from-amber-600 hover:to-emerald-700 text-white px-5 py-2 rounded-xl font-bold text-xs sm:text-sm shadow-lg shadow-emerald-600/30 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
+                    <i class="fa-solid fa-heart text-amber-200 animate-bounce"></i>
+                    <span>تبرع الآن</span>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-emerald-600 font-bold border-b border-slate-50">الرئيسية</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 font-semibold border-b border-slate-50">من نحن</a>
+            <a href="#projects" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 font-semibold border-b border-slate-50">مشاريعنا</a>
+            <a href="#zakat" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 font-semibold border-b border-slate-50">حاسبة الزكاة</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 font-semibold border-b border-slate-50">التوثيق الميداني</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 font-semibold border-b border-slate-50">تواصل معنا</a>
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="https://t.me/rarnational" target="_blank" class="dynamic-tg-link w-full bg-sky-500 text-white py-2.5 rounded-xl font-bold text-xs text-center flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-telegram text-base"></i>
+                    <span>تواصل عبر تيليجرام (<span class="dynamic-tg-handle">@rarnational</span>)</span>
+                </a>
+                <a href="https://wa.me/963967500" target="_blank" class="dynamic-wa-link w-full bg-emerald-600 text-white py-2.5 rounded-xl font-bold text-xs text-center flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>تواصل عبر واتساب (<span class="dynamic-wa-handle">00963967500</span>)</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-900 text-white py-20 lg:py-28 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/20 via-transparent to-transparent opacity-60"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-7 text-center lg:text-right">
+                    <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-sm">
+                        <span class="flex h-2.5 w-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>مبادرة إنسانية طارئة - استجابة مباشرة</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+                        معاً نصنع <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300 bg-clip-text text-transparent">الأمل</span> وننقذ حياة المحتاجين
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        مؤسسة إغاثية تعنى بتقديم المساعدات الغذائية والطبية الطارئة، وتوفير كفالات الأيتام للأسر الأكثر حوجة بكل كرامة وشفافية.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <button onclick="openDonateModal()" class="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-8 py-4 rounded-2xl font-extrabold text-base shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all duration-300 flex items-center justify-center gap-3 group">
+                            <i class="fa-solid fa-hand-holding-heart group-hover:scale-110 transition-transform"></i>
+                            <span>تبرع الآن وساهم معنا</span>
+                        </button>
+                        <a href="https://t.me/rarnational" target="_blank" class="dynamic-tg-link bg-sky-600/90 hover:bg-sky-600 text-white border border-sky-400/30 px-8 py-4 rounded-2xl font-bold text-base backdrop-blur-sm transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-sky-600/20">
+                            <i class="fa-brands fa-telegram text-xl"></i>
+                            <span>راسلنا على تيليجرام (<span class="dynamic-tg-handle">@rarnational</span>)</span>
+                        </a>
+                    </div>
+
+                    <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-slate-300">
+                        <span class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i> توثيق مصور لكل عمل إغاثي
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <i class="fa-solid fa-shield-halved text-emerald-400"></i> التواصل المباشر والسريع
+                        </span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-emerald-500 to-teal-500 opacity-30 blur-xl"></div>
+                        <div class="relative bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop" 
+                                 alt="مؤسسة الأمل للإغاثة" 
+                                 class="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/800x600/065f46/ffffff?text=مؤسسة+الأمل+للإغاثة'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                            
+                            <div class="absolute bottom-6 right-6 left-6 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/80">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg shrink-0">
+                                        <i class="fa-solid fa-shield-heart"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-white text-sm">استجابة ميدانية مباشرة</h4>
+                                        <p class="text-xs text-slate-300">التبرعات تصل إلى المحتاجين بآلية موثوقة</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Statistics Section -->
+    <section class="bg-white border-b border-slate-200 relative -mt-6 z-20 max-w-6xl mx-auto rounded-3xl shadow-xl px-6 py-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x md:divide-x-reverse divide-slate-100">
+            <div class="p-2">
+                <div class="text-3xl sm:text-4xl font-extrabold text-emerald-600 mb-1">+50,000</div>
+                <div class="text-xs sm:text-sm font-semibold text-slate-600">مستفيد ومستفيدة</div>
+            </div>
+            <div class="p-2 pt-4 md:pt-2">
+                <div class="text-3xl sm:text-4xl font-extrabold text-emerald-600 mb-1">+145</div>
+                <div class="text-xs sm:text-sm font-semibold text-slate-600">مشروع إغاثي منفذ</div>
+            </div>
+            <div class="p-2 pt-4 md:pt-2">
+                <div class="text-3xl sm:text-4xl font-extrabold text-emerald-600 mb-1">+18,000</div>
+                <div class="text-xs sm:text-sm font-semibold text-slate-600">سلة غذائية موزعة</div>
+            </div>
+            <div class="p-2 pt-4 md:pt-2">
+                <div class="text-3xl sm:text-4xl font-extrabold text-emerald-600 mb-1">+3,500</div>
+                <div class="text-xs sm:text-sm font-semibold text-slate-600">يتيم مكفول</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-600 font-bold text-xs sm:text-sm tracking-wider uppercase bg-emerald-50 px-4 py-1.5 rounded-full border border-emerald-200">قيمنا وإرادتنا</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 mb-4">عن مؤسسة الأمل للإغاثة والتنمية</h2>
+                <p class="text-slate-600 text-base leading-relaxed">
+                    نحن مبادرة إنسانية مستقلة، نهدف إلى تقديم الدعم والإغاثة الشاملة للعائلات النازحة والأطفال والأيتام عبر آليات سريعة وشفافة وتواصل مباشر.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">السرعة في الأداء</h3>
+                    <p class="text-slate-600 leading-relaxed text-xs sm:text-sm">
+                        توفير المستلزمات الطبية والغذائية للأسر المنكوبة بسرعة وكفاءة عالية.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-camera font-bold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">التوثيق المستمر</h3>
+                    <p class="text-slate-600 leading-relaxed text-xs sm:text-sm">
+                        نضمن إطلاع المتبرع على فيديوهات وصور التوزيع لإرساء مبدأ الشفافية التامة.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">كفالة الأيتام</h3>
+                    <p class="text-slate-600 leading-relaxed text-xs sm:text-sm">
+                        توفير الرعاية الشاملة للأيتام لتأمين حياة ومستقبل أفضل لهم.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-emerald-600 font-bold text-xs sm:text-sm bg-emerald-50 px-4 py-1.5 rounded-full border border-emerald-200">حملات التبرع</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">المشاريع الإغاثية النشطة</h2>
+                </div>
+                <p class="text-slate-500 text-xs sm:text-sm md:max-w-md mt-2 md:mt-0">
+                    اختر المشروعات التي تريد دعمها وتواصل معنا فوراً لإكمال التبرع.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Project 1 -->
+                <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/80 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=600&auto=format&fit=crop" 
+                                 alt="السلال الغذائية" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://placehold.co/600x400/047857/ffffff?text=سلال+غذائية'">
+                            <span class="absolute top-3 right-3 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">أمن غذائي</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">السلال الغذائية الطارئة</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                توفير مؤن غذائية تكفي الأسرة المحتاجة شهراً كاملاً.
+                            </p>
+                            <div class="space-y-1 mb-4">
+                                <div class="flex justify-between text-xs font-bold text-slate-700">
+                                    <span>المجمع: $22,400</span>
+                                    <span class="text-emerald-600">89%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-emerald-500 h-full rounded-full" style="width: 89%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="openDonateModal('السلال الغذائية الطارئة')" class="w-full bg-slate-900 hover:bg-emerald-600 text-white font-bold text-xs py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-heart text-amber-400"></i>
+                            <span>تبرع لهذا المشروع</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/80 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=600&auto=format&fit=crop" 
+                                 alt="كفالة الأيتام" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://placehold.co/600x400/059669/ffffff?text=كفالة+أيتام'">
+                            <span class="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">كفالة أيتام</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">برنامج كفالة الأيتام</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                كفالة شهرية تضمن سد احتیاجات الأطفال الأيتام ورعايتهم.
+                            </p>
+                            <div class="space-y-1 mb-4">
+                                <div class="flex justify-between text-xs font-bold text-slate-700">
+                                    <span>المجمع: $31,500</span>
+                                    <span class="text-amber-500">78%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-amber-500 h-full rounded-full" style="width: 78%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="openDonateModal('برنامج كفالة الأيتام')" class="w-full bg-slate-900 hover:bg-emerald-600 text-white font-bold text-xs py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-heart text-amber-400"></i>
+                            <span>اكفل يتيماً الآن</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/80 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=600&auto=format&fit=crop" 
+                                 alt="الدعم الطبي" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://placehold.co/600x400/0d9488/ffffff?text=رعاية+طبية'">
+                            <span class="absolute top-3 right-3 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full">علاج ودواء</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">الدعم والرعاية الطبية</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                تأمين الأدوية والمستلزمات الطبية العاجلة للحالات المرضية.
+                            </p>
+                            <div class="space-y-1 mb-4">
+                                <div class="flex justify-between text-xs font-bold text-slate-700">
+                                    <span>المجمع: $12,800</span>
+                                    <span class="text-teal-600">64%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-teal-500 h-full rounded-full" style="width: 64%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="openDonateModal('الدعم والرعاية الطبية')" class="w-full bg-slate-900 hover:bg-emerald-600 text-white font-bold text-xs py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-heart text-amber-400"></i>
+                            <span>ساهم في العلاج</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200/80 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=600&auto=format&fit=crop" 
+                                 alt="إيواء الأسر" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                 onerror="this.src='https://placehold.co/600x400/0f766e/ffffff?text=إيواء+الأسر'">
+                            <span class="absolute top-3 right-3 bg-sky-600 text-white text-xs font-bold px-3 py-1 rounded-full">إغاثة طارئة</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">إيواء الأسر المتضررة</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                تقديم التدفئة والخيام والمستلزمات العاجلة للنازحين.
+                            </p>
+                            <div class="space-y-1 mb-4">
+                                <div class="flex justify-between text-xs font-bold text-slate-700">
+                                    <span>المجمع: $14,100</span>
+                                    <span class="text-sky-600">94%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-sky-500 h-full rounded-full" style="width: 94%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="openDonateModal('إيواء الأسر المتضررة')" class="w-full bg-slate-900 hover:bg-emerald-600 text-white font-bold text-xs py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-heart text-amber-400"></i>
+                            <span>قدم الدعم العاجل</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zakat Calculator Section -->
+    <section id="zakat" class="py-16 bg-gradient-to-br from-emerald-950 via-slate-900 to-slate-950 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="bg-emerald-500/20 text-emerald-300 font-bold text-xs px-4 py-1.5 rounded-full border border-emerald-400/30">حاسبة تفاعلية</span>
+                <h2 class="text-3xl font-extrabold mt-3">احسب زكاة مالك بآلية دقيقة</h2>
+                <p class="text-slate-300 text-xs sm:text-sm mt-2">احسب النسبة الشرعية (2.5%) وحول قيمتها لدعم مستحقيها.</p>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-700 p-6 sm:p-8 rounded-3xl backdrop-blur-md shadow-2xl">
+                <div class="grid sm:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-2">أدخل المبلغ الإجمالي الفائض عن الحاجة ($)</label>
+                        <div class="relative">
+                            <input type="number" id="zakatInput" oninput="calculateZakat()" placeholder="مثال: 5000" class="w-full bg-slate-950 border border-slate-600 text-white px-4 py-3 rounded-xl text-lg font-bold focus:outline-none focus:border-emerald-500">
+                            <span class="absolute left-4 top-3.5 text-slate-400 font-bold">$</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 text-center">
+                        <div class="text-xs text-slate-400 mb-1">مقدار الزكاة الواجبة (2.5%):</div>
+                        <div id="zakatResult" class="text-3xl font-black text-amber-400">$0.00</div>
+                        <p class="text-[11px] text-slate-400 mt-1">تُوجه لصالح الفقراء والأيتام مباشرة</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-slate-800 flex justify-center">
+                    <button onclick="donateZakat()" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black px-8 py-3.5 rounded-xl text-sm transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/20">
+                        <i class="fa-solid fa-hand-holding-dollar text-lg"></i>
+                        <span>تبرع بمبلغ الزكاة الآن</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Field Documentation / Gallery Section -->
+    <section id="gallery" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-emerald-600 font-bold text-xs sm:text-sm bg-emerald-50 px-4 py-1.5 rounded-full border border-emerald-200">التوثيق الميداني</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4">صور من عمليات التوزيع في الميدان</h2>
+                <p class="text-slate-600 text-xs sm:text-sm">
+                    توثيق حصر أعمال التوزيع لإطلاعكم المباشر على الأثر الإنساني.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-2 mt-8">
+                    <button onclick="filterGallery('all')" class="gallery-btn active bg-emerald-600 text-white px-5 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all">الكل</button>
+                    <button onclick="filterGallery('food')" class="gallery-btn bg-white hover:bg-slate-200 text-slate-700 px-5 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all">توزيع الأغذية</button>
+                    <button onclick="filterGallery('kids')" class="gallery-btn bg-white hover:bg-slate-200 text-slate-700 px-5 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all">الأطفال والتعليم</button>
+                    <button onclick="filterGallery('medical')" class="gallery-btn bg-white hover:bg-slate-200 text-slate-700 px-5 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all">الرعاية الصحية</button>
+                </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item food bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=600&auto=format&fit=crop" 
+                         alt="توثيق التوزيع" class="w-full h-56 object-cover"
+                         onerror="this.src='https://placehold.co/600x400/065f46/ffffff?text=توزيع+الأغذية'">
+                    <div class="p-4">
+                        <div class="text-xs text-emerald-600 font-bold mb-1"><i class="fa-regular fa-calendar-check"></i> توزيع جديد</div>
+                        <h4 class="font-bold text-slate-800 text-sm">تسليم السلال الغذائية للأسر المتعففة</h4>
+                    </div>
+                </div>
+
+                <div class="gallery-item kids bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop" 
+                         alt="رعاية الأطفال" class="w-full h-56 object-cover"
+                         onerror="this.src='https://placehold.co/600x400/047857/ffffff?text=رعاية+الأيتام'">
+                    <div class="p-4">
+                        <div class="text-xs text-emerald-600 font-bold mb-1"><i class="fa-regular fa-calendar-check"></i> توثيق كفالات</div>
+                        <h4 class="font-bold text-slate-800 text-sm">تسليم الكفالات الدورية للأيتام</h4>
+                    </div>
+                </div>
+
+                <div class="gallery-item medical bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=600&auto=format&fit=crop" 
+                         alt="القافلة الطبية" class="w-full h-56 object-cover"
+                         onerror="this.src='https://placehold.co/600x400/0d9488/ffffff?text=رعاية+طبية'">
+                    <div class="p-4">
+                        <div class="text-xs text-emerald-600 font-bold mb-1"><i class="fa-regular fa-calendar-check"></i> العيادة الميدانية</div>
+                        <h4 class="font-bold text-slate-800 text-sm">فحوصات وتأمين علاجات للأسر</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Direct Contact Callout Section -->
+    <section class="py-16 bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center lg:text-right flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div class="space-y-4 max-w-2xl">
+                <div class="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 px-4 py-1.5 rounded-full text-xs font-bold border border-emerald-400/30">
+                    <i class="fa-solid fa-headset text-lg"></i>
+                    <span>تواصل مباشر واستجابة سريعة</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold">تواصل معنا فوراً عبر تيليجرام أو واتساب</h2>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    نستقبل استفساراتكم وتبرعاتكم بشكل مباشر وموثوق لتوثيق وصول الدعم لمستحقيه.
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+                <a href="https://t.me/rarnational" target="_blank" class="dynamic-tg-link bg-sky-500 hover:bg-sky-400 text-white px-7 py-4 rounded-2xl font-bold text-sm shadow-lg shadow-sky-500/30 transition-all flex items-center justify-center gap-2.5 telegram-glow">
+                    <i class="fa-brands fa-telegram text-2xl"></i>
+                    <span>تيليجرام (<span class="dynamic-tg-handle">@rarnational</span>)</span>
+                </a>
+                <a href="https://wa.me/963967500" target="_blank" class="dynamic-wa-link bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-4 rounded-2xl font-bold text-sm shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2.5 whatsapp-glow">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>واتساب (<span class="dynamic-wa-handle">00963967500</span>)</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Contact Us Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-emerald-600 font-bold text-xs sm:text-sm bg-emerald-50 px-4 py-1.5 rounded-full border border-emerald-200">وسائل التواصل المباشرة</span>
+                        <h2 class="text-3xl font-extrabold text-slate-900 mt-3">تفاصيل التواصل المعتمدة</h2>
+                        <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+                            يمكنكم التواصل المباشر للتبرع أو تقديم الاستفسارات عبر الحسابات التالية:
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Telegram Info Box -->
+                        <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-sky-300 transition-colors">
+                            <div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center text-2xl shrink-0">
+                                <i class="fa-brands fa-telegram"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-slate-900 text-sm">حساب التيليجرام الرسمي</h4>
+                                <p class="text-xs text-slate-500 mb-1">مراسلة سريعة للتبرع والتوثيق</p>
+                                <a href="https://t.me/rarnational" target="_blank" class="dynamic-tg-link text-sky-600 font-extrabold text-base hover:underline dir-ltr inline-block dynamic-tg-handle">@rarnational</a>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp Info Box -->
+                        <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-300 transition-colors">
+                            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-2xl shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-slate-900 text-sm">رقم التواصل عبر الواتساب</h4>
+                                <p class="text-xs text-slate-500 mb-1">مستعدون للرد على استفساراتكم</p>
+                                <a href="https://wa.me/963967500" target="_blank" class="dynamic-wa-link text-emerald-600 font-extrabold text-base hover:underline dir-ltr inline-block dynamic-wa-handle">00963967500</a>
+                            </div>
+                        </div>
+
+                        <!-- Email Box -->
+                        <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
+                            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">البريد الإلكتروني</h4>
+                                <p class="text-xs text-slate-500 mb-1">للمراسلات الرسمية والتقارير</p>
+                                <span id="dynamicEmailDisplay" class="text-slate-700 font-bold text-xs sm:text-sm dir-ltr inline-block">contact@alamal-relief.org</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fast Contact Form -->
+                <div class="lg:col-span-7 bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6">أرسل رسالة مباشرة إلى حساب الواتساب الخاص بنا</h3>
+                    <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">الاسم الكريم *</label>
+                                <input type="text" id="contactName" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm" placeholder="أدخل اسمك الكريم">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">رقم الهاتف</label>
+                                <input type="tel" id="contactPhone" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm" placeholder="00963...">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">نوع المساعدة أو الاستفسار *</label>
+                            <select id="contactType" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-white">
+                                <option value="تبرع لمشروع إغاثي">تبرع لمشروع إغاثي</option>
+                                <option value="كفالة يتيم">كفالة يتيم</option>
+                                <option value="استفسار وتوثيق">استفسار وتوثيق</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">نص الرسالة *</label>
+                            <textarea id="contactMessage" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm" placeholder="اكتب تفاصيل طلبك أو استفسارك..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-600/20 transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>إرسال مباشرة للواتساب (00963967500)</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                        </div>
+                        <span class="text-lg font-bold text-white">مؤسسة الأمل</span>
+                    </div>
+                    <p class="text-xs leading-relaxed text-slate-400">
+                        مبادرة إنسانية تهدف لتأمين الاحتياجات الأساسية وكفالة الأيتام وتوثيق التبرعات.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-xs sm:text-sm mb-4">أقسام الموقع</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="hover:text-emerald-400 transition-colors">الرئيسية</a></li>
+                        <li><a href="#about" class="hover:text-
